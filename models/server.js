@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { json } = require('express');
 
 class Server {
   constructor() {
@@ -13,7 +14,11 @@ class Server {
   }
 
   middlewares() {
+    //Enable CORS to APPLICATION
     this.app.use(cors());
+    //Enables the application to read and write JSON format to request and responses
+    this.app.use(express.json());
+    //Middlesware to share the public folder
     this.app.use(express.static('public'));
   }
 

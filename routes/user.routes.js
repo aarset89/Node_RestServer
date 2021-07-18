@@ -9,7 +9,7 @@ const {
 const router = Router();
 
 router.get('/', getUsers);
-router.post('/', postUser);
+router.post('/:id', postUser);
 router.put('/', putUser);
 router.delete('/', deleteUser);
 
